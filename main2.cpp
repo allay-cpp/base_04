@@ -26,32 +26,7 @@ public:
 
 	char symbol_city()
 	{
-		return this->getCity()[0];
-	}
-
-private:
-	void setAddress(std::string newCity, std::string newStreet, int newHouse, int newFlat)
-	{
-		this->city = newCity;
-		this->street = newStreet;
-		this->house = newHouse;
-		this->flat = newFlat;
-	}
-	std::string getCity()
-	{
-		return this->city;
-	}
-	std::string getStreet()
-	{
-		return this->street;
-	}
-	int getHouse()
-	{
-		return this->house;
-	}
-	int getFlat()
-	{
-		return this->flat;
+		return this->city[0];
 	}
 };
 
@@ -101,11 +76,6 @@ int main(int argc, char** argv)
 		fin.close();
 
 		sort(addresses, n);
-
-		for (int i = 0; i < n; i++)
-		{
-			std::cout << addresses[i].get_output_address() << std::endl;
-		}
 
 		std::ofstream fin("out.txt");
 		fin << n << '\n';
